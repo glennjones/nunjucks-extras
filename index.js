@@ -6,10 +6,25 @@ const TagTrim = require('./tags/trim.js');
 const Marked = require('marked');
 
 
-module.exports.getHAPIEngineOptions = function (Nunjucks, path, options) {
+module.exports.getHAPIEngineOptions = function (Nunjucks, path, engineOptions) {
 
-    let env = Nunjucks.configure(options.path, { watch: false, noCache: false });
+    let env = Nunjucks.configure(path, engineOptions);
     append( Nunjucks, env );
+
+    return {
+        compile: function (src, options) {
+            const template = Nunjucks.compile(src, options.environment);
+            return function (context) {
+                return template.render(context);
+            };
+        },
+
+        prepare: function (options, next) {
+            options.compileOptions.environment = Nunjucks.configure(options.path, { watch: false, noCache: false });
+            return next();
+        }
+    }
+
 
 };
 
