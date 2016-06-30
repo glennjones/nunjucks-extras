@@ -8,7 +8,7 @@ module.exports.register = function (env) {
         if(!format){
             format = 'Do MMMM YYYY, h:mm:ss a'
         }
-        return moment(data).format(format)
+        return Moment(date).format(format)
     });
 
 };

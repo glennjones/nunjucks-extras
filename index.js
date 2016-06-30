@@ -5,7 +5,7 @@ const TagIncludeWith = require('./tags/includeWith.js');
 const TagTrim = require('./tags/trim.js');
 const Marked = require('marked');
 
-
+/*
 module.exports.getHAPIEngineOptions = function (Nunjucks, path, engineOptions) {
 
     let env = Nunjucks.configure(path, engineOptions);
@@ -24,9 +24,14 @@ module.exports.getHAPIEngineOptions = function (Nunjucks, path, engineOptions) {
             return next();
         }
     }
-
-
 };
+*/
+
+
+
+module.exports.append = function ( Nunjucks, env ){
+    append( Nunjucks, env );
+}
 
 
 function append( Nunjucks, env ){
@@ -43,4 +48,5 @@ function append( Nunjucks, env ){
 
     // add trim tag
     TagTrim.register(env);
+
 }
