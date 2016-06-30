@@ -1,0 +1,20 @@
+{
+  "name": "nunjucks-extras",
+  "version": "1.0.0",
+  "description": "A set of tag extensions and filters for nunjucks templating lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nunjucks",
+    "tags",
+    "filters",
+    "extensions"
+  ],
+  "author": "Glenn Jones <glennjonesnet@gmail.com> (http://glennjones.net/)",
+  "dependencies": {
+    "marked": "^0.3.5",
+    "moment": "^2.13.0"
+  }
+}
