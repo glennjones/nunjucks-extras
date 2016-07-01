@@ -3,29 +3,9 @@ const Filters = require('./filters/index.js');
 const TagMarkdown = require('./tags/markdown.js');
 const TagIncludeWith = require('./tags/includeWith.js');
 const TagTrim = require('./tags/trim.js');
+const TagSwitch = require('./tags/switch.js');
 const Marked = require('marked');
 
-/*
-module.exports.getHAPIEngineOptions = function (Nunjucks, path, engineOptions) {
-
-    let env = Nunjucks.configure(path, engineOptions);
-    append( Nunjucks, env );
-
-    return {
-        compile: function (src, options) {
-            const template = Nunjucks.compile(src, options.environment);
-            return function (context) {
-                return template.render(context);
-            };
-        },
-
-        prepare: function (options, next) {
-            options.compileOptions.environment = Nunjucks.configure(options.path, { watch: false, noCache: false });
-            return next();
-        }
-    }
-};
-*/
 
 
 
@@ -48,5 +28,8 @@ function append( Nunjucks, env ){
 
     // add trim tag
     TagTrim.register(env);
+
+    // add switch tag
+    TagSwitch.register(env);
 
 }
