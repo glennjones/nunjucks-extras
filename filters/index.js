@@ -37,5 +37,13 @@ module.exports.register = function (env) {
         return '';
     });
 
+
+    env.addFilter('singlespace', function(str) {
+        if(str){
+            return str.replace(/\s\s+/g, ' ');
+        }
+        return '';
+    });
+
 };
 
