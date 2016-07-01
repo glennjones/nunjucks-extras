@@ -11,5 +11,31 @@ module.exports.register = function (env) {
         return Moment(date).format(format)
     });
 
+
+    env.addFilter('cut', function(str, replaceStr) {
+        if(str && replaceStr){
+            var re = new RegExp(replaceStr, 'g');
+            return str.replace(re, '');
+        }
+        return '';
+    });
+
+
+    env.addFilter('scale', function(url, sizeStr) {
+        if(url && sizeStr){
+            if(url.indexOf('/') > -1){
+                if(url.indexOf('/') === url.length){
+                    return parts.join('/') + sizeStr;
+                }else{
+                    var parts = url.split('/');
+                    parts.splice(parts.length-1, 0, sizeStr);
+                }
+
+            }
+            return parts.join('/')
+        }
+        return '';
+    });
+
 };
 
