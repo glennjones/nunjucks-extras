@@ -3,10 +3,10 @@ var Nunjucks = require('nunjucks');
 
 // register
 module.exports.register = function(env) {
-  env.addExtension('translate', new Trim(env));
+  env.addExtension('translate', new Translate(env));
 };
 
-function Trim(env) {
+function Translate(env) {
   this.tags = ['translate'];
 
   this.parse = function(parser, nodes, lexer) {
