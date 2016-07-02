@@ -24,7 +24,7 @@ function append( Nunjucks, env ){
     TagMarkdown.register(env, Marked);
     TagTrim.register(env);
     TagSwitch.register(env);
-    TagTranlate.register(env);
+    TagTranslate.register(env);
 
     Nunjucks.nodes.Include = Nunjucks.nodes.Node.extend('Include', { fields: ['template', 'ignoreMissing', 'with'] });
     TagIncludeWith.register(env);
