@@ -46,5 +46,11 @@ module.exports.register = function (env) {
         return '';
     });
 
+
+    // TODO - turn into a true translate
+    env.addFilter('translate', function(str) {
+        return str.replace(/\[t\]|\[\/t\]/g, '');
+    });
+
 };
 

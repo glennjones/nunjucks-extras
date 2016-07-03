@@ -1,4 +1,8 @@
 
+
+
+/* Rebuilt as a filter to get around block issue
+
 var Nunjucks = require('nunjucks');
 
 // register
@@ -28,3 +32,4 @@ function Translate(env) {
     return new Nunjucks.runtime.SafeString(body);
   }
 }
+*/
