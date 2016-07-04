@@ -52,5 +52,10 @@ module.exports.register = function (env) {
         return str.replace(/\[t\]|\[\/t\]/g, '');
     });
 
+ 
+
+
+
+
 };
 
