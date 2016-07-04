@@ -11,21 +11,28 @@ const Marked = require('marked');
 
 
 
-module.exports.append = function ( Nunjucks, env ){
-    append( Nunjucks, env );
+module.exports.append = function ( Nunjucks, env, data){
+    append( Nunjucks, env, data );
 }
 
 
-function append( Nunjucks, env ){
+function append( Nunjucks, env, data ){
 
     // add filters
     Filters.register(env);
+
+   //get data for tags
+    let proxyPathing  = [];
+    if(data && data.siteConfig && data.siteConfig.proxyPathing){
+        proxyPathing = data.siteConfig.proxyPathing;
+    }
+
 
     // add tags
     TagMarkdown.register(env, Marked);
     TagTrim.register(env);
     TagSwitch.register(env);
-    TagVersionedPath.register(env);
+    TagVersionedPath.register(env, {proxyPathing: proxyPathing} );
     //TagTranslate.register(env);
 
     Nunjucks.nodes.Include = Nunjucks.nodes.Node.extend('Include', { fields: ['template', 'ignoreMissing', 'with'] });
