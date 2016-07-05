@@ -6,6 +6,7 @@ const TagTrim = require('./tags/trim.js');
 const TagSwitch = require('./tags/switch.js');
 const TagVersionedPath = require('./tags/versionedpath.js');
 const TagWith = require('./tags/with.js');
+const Tagi18n = require('./tags/i18n.js');
 //const TagTranslate = require('./tags/translate.js');
 const Marked = require('marked');
 
@@ -35,6 +36,7 @@ function append( Nunjucks, env, data ){
     TagSwitch.register(env);
     TagVersionedPath.register(env, {proxyPathing: proxyPathing} );
     TagWith.register(env);
+    Tagi18n.register(env, {});
     //TagTranslate.register(env);
 
     Nunjucks.nodes.Include = Nunjucks.nodes.Node.extend('Include', { fields: ['template', 'ignoreMissing', 'with'] });

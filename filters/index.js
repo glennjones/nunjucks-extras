@@ -47,12 +47,13 @@ module.exports.register = function (env) {
     });
 
 
-    // TODO - turn into a true translate
+    /* TODO - turn into a true translate
     env.addFilter('translate', function(str) {
         return str.replace(/\[t\]|\[\/t\]/g, '');
     });
+    */
 
- 
+
 
 
 

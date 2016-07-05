@@ -1,8 +1,6 @@
 
 
-
-/* Rebuilt as a filter to get around block issue
-
+/*
 var Nunjucks = require('nunjucks');
 
 // register
@@ -28,7 +26,6 @@ function Translate(env) {
   this.blockTag = function(environment, body) {
 
     var body = body();
-    body = body.replace(/\[t\]|\[\/t\]/g, '');
     return new Nunjucks.runtime.SafeString(body);
   }
 }
