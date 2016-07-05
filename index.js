@@ -9,6 +9,7 @@ const TagWith = require('./tags/with.js');
 const Tagi18n = require('./tags/i18n.js');
 const TagDump = require('./tags/dump.js');
 const TagForObj = require('./tags/forObj.js');
+const TagHash= require('./tags/hash.js');
 //const TagTranslate = require('./tags/translate.js');
 const Marked = require('marked');
 
@@ -41,6 +42,7 @@ function append( Nunjucks, env, data ){
     Tagi18n.register(env, {});
     TagDump.register(env);
     TagForObj.register(env);
+    TagHash.register(env);
     //TagTranslate.register(env);
 
     Nunjucks.nodes.Include = Nunjucks.nodes.Node.extend('Include', { fields: ['template', 'ignoreMissing', 'with'] });
