@@ -52,3 +52,9 @@ A number of extra tags and filters for nunjucks lib
 ```
 {% i18n %}This is english{% endi18n %}
 ```
+
+
+### dump
+```
+{% dump %}{% enddump %}
+```
