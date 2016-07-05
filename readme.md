@@ -58,3 +58,10 @@ A number of extra tags and filters for nunjucks lib
 ```
 {% dump %}{% enddump %}
 ```
+
+### forObj
+<ul>
+{% forObj "item", in=Model.posts %}
+  <li>{{ item.title }}</li>
+{% endforObj %}
+</ul>
