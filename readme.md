@@ -47,3 +47,8 @@ A number of extra tags and filters for nunjucks lib
 ```
 {% versionedpath %}~/custom-assets/logo.png{% endversionedpath %}
 ```
+
+### i18n
+```
+{% i18n %}This is english{% endi18n %}
+```
